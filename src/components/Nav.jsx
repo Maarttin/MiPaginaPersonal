@@ -11,6 +11,10 @@ import MenuItem from '@mui/material/MenuItem';
 import ImageAvatars from "../components/Avatar";
 import { useTheme } from '@emotion/react';
 import { useMediaQuery } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 export default function ButtonAppBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -30,8 +34,10 @@ export default function ButtonAppBar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed" sx={{  width: '100%',
-    overflowX: 'hidden',backgroundColor: '#0D1B2A', color: '#E0E1DD' }}>
+            <AppBar position="fixed" sx={{
+                width: '100%',
+                overflowX: 'hidden', backgroundColor: '#0D1B2A', color: '#E0E1DD'
+            }}>
                 <Toolbar >
                     {isMobile ? (
                         <IconButton
@@ -45,7 +51,27 @@ export default function ButtonAppBar() {
                         </IconButton>
                     ) : (
                         <Box sx={{ display: 'flex', gap: 2 }}>
-                            <Button color='inherit' onClick={handleClick}>Contáctame</Button>
+                            <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer">
+                                <GitHubIcon style={{ fontSize: 30, color: '#fff' }} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/mart%C3%ADn-arag%C3%B3n-s%C3%A1nchez-36942b283/" target="_blank" rel="noopener noreferrer">
+                                <LinkedInIcon style={{ fontSize: 30, color: '#fff' }} />
+                            </a>
+                            <a
+                                href="https://mail.google.com/mail/?view=cm&fs=1&to=martinaragonsanchez@gmail.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <EmailIcon style={{ fontSize: 30, color: '#fff' }} />
+                            </a>
+                            <a
+                                href="https://wa.me/9513963434"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <WhatsAppIcon style={{ fontSize: 30, color: '#fff' }} />
+                            </a>
+
                         </Box>
                     )}
 
@@ -79,27 +105,42 @@ export default function ButtonAppBar() {
 
                     },
                 }}
-                >
-            
-                    <MenuItem onClick={handleClose}>
-          <strong>GitHub:</strong>&nbsp;
-          <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer" style={{ color: '#64ffda' }}>
-            github.com/Maarttin
-          </a>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <strong>Correo:</strong>&nbsp;<br />
-          martinaragonsanchez@gmail.com
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <strong>LinkedIn:</strong>&nbsp;
-          <a href="https://www.linkedin.com/in/mart%C3%ADn-arag%C3%B3n-s%C3%A1nchez-36942b283/" target="_blank" rel="noopener noreferrer" style={{ color: '#64ffda' }}>
-            linkedin.com/Martin
-          </a>
-        </MenuItem>
-        <MenuItem onClick={handleClose}>
-          <strong>Teléfono:</strong> 9513963434
-        </MenuItem>
+            >
+
+                <MenuItem onClick={handleClose}>
+                    <strong>GitHub:</strong>&nbsp;
+                    <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer" style={{ color: '#64ffda' }}>
+                        github.com/Maarttin
+                    </a>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                <strong>Correo:</strong>&nbsp;
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=martinaragonsanchez@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#64ffda' }}
+                    >
+                         martinaragonsanchez@gmail.com
+                    </a>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                    <strong>LinkedIn:</strong>&nbsp;
+                    <a href="https://www.linkedin.com/in/mart%C3%ADn-arag%C3%B3n-s%C3%A1nchez-36942b283/" target="_blank" rel="noopener noreferrer" style={{ color: '#64ffda' }}>
+                        linkedin.com/Martin
+                    </a>
+                </MenuItem>
+                <MenuItem onClick={handleClose}>
+                <strong>Teléfono: </strong>&nbsp;
+                    <a
+                        href="https://wa.me/9513963434"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: '#64ffda' }}
+                    >
+                        9513963434
+                    </a>
+                </MenuItem>
             </Menu>
 
         </Box>
