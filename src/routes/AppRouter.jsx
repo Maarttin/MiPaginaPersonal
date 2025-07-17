@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 import ButtonAppBar from "../components/Nav";
 function AppRouter() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/MiPaginaPersonal">
             <ButtonAppBar></ButtonAppBar>
             <Routes>
                 <Route path="/" element={<Home />} />

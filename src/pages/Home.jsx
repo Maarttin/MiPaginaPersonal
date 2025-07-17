@@ -7,16 +7,17 @@ function Home() {
         <div className="min-h-screen bg-[#e0e1dd]">
 
 
-            <h1 className="text-center text-3xl font-black pt-20 pb-10" >Ingeniero en Computación</h1>
+            <h1 className="text-sm sm:text-base md:text-lg lg:text-xl text-center font-black pt-20 pb-10" >Ingeniero en Computación</h1>
 
             <div className="flex justify-between px-10">
+                <Card1 />
                 <div className="flex flex-col pr-10">
                     <SelectActionCard />
                     <div className="mt-4">
                         <ButtonBaseDemo />
                     </div>
                 </div>
-                <Card1 />
+                
             </div>
 
 

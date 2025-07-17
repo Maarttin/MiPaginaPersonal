@@ -43,18 +43,14 @@ export default function SelectActionCard() {
         // height: '100vh',
       }}
     >
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 3,
-          maxWidth: '1000px',
-        }}
+      <Box className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[1000px]"
+
       >
         {cards.map((card) => (
-          <Card key={card.id} sx={{
+          <Card key={card.id} 
+          sx={{
             
-            width:220,
+            width:'100%',
             height: expandedCardId == card.id ? 300 : 60,
             backgroundColor: expandedCardId=== card.id ? '#415a77' : '#778da9',
             color: expandedCardId === card.id ? '#fff' : '#000',

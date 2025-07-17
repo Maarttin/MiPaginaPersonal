@@ -4,14 +4,14 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
-import foto from '../assets/foto_perfil.jpg'
+import foto_perfil from '../assets/foto_perfil.jpg'
 export default function ActionAreaCard() {
   return (
     <Card sx={{ width:400, height: 600, background:"#415a77" }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          image={foto}
+          image={foto_perfil}
           alt="Información de Martín"
           sx={{
             height: 250,       

@@ -79,13 +79,29 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function ButtonBaseDemo() {
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+    <Box   sx={{
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    gap: 2,
+    px: 2,
+    width: '100%',
+  }}>
       {images.map((image) => (
         <ImageButton
           focusRipple
           key={image.title}
-          style={{
-            width: image.width,
+          sx={{
+            width: {
+              xs: '100%',  // Pantallas pequeñas
+              sm: '50%',   // Tablets
+              md: '25%'    // Escritorio
+            },
+            height: {
+              xs: 60,
+              sm: 80,
+              md: 100
+            },
           }}
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
@@ -107,7 +123,8 @@ export default function ButtonBaseDemo() {
             </Typography>
           </Image>
         </ImageButton>
-      ))}
-    </Box>
+  ))
+}
+    </Box >
   );
 }

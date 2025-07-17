@@ -9,10 +9,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ImageAvatars from "../components/Avatar";
+import { useTheme } from '@emotion/react';
+import { useMediaQuery } from '@mui/material';
+
 export default function ButtonAppBar() {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const open = Boolean(anchorEl);
+
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -23,27 +30,33 @@ export default function ButtonAppBar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="fixed" sx={{ backgroundColor: '#0D1B2A', color: '#E0E1DD' }}>
+            <AppBar position="fixed" sx={{  width: '100%',
+    overflowX: 'hidden',backgroundColor: '#0D1B2A', color: '#E0E1DD' }}>
                 <Toolbar >
-                    <IconButton
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="menu"
-                        sx={{ mr: 2 }}
+                    {isMobile ? (
+                        <IconButton
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="menu"
+                            onClick={handleClick}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    ) : (
+                        <Box sx={{ display: 'flex', gap: 2 }}>
+                            <Button color='inherit' onClick={handleClick}>Contáctame</Button>
+                        </Box>
+                    )}
 
-                        onClick={handleClick}
-                    >
-                        Contáctame
-
-                    </IconButton>
-
-                    <Typography variant="h6" component="div" sx={{ ml: 'auto' }}>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                         Martín Aragón Sánchez
                     </Typography>
-                    <div className=" pl-8 " >
+                    <Box sx={{ ml: 'auto' }}>
+
                         <ImageAvatars />
-                    </div>
+
+                    </Box>
 
                 </Toolbar>
 
@@ -55,26 +68,38 @@ export default function ButtonAppBar() {
                 onClose={handleClose}
                 PaperProps={{
                     sx: {
-                        width: '350px',
-                        height: '250px',
+                        width: { xs: '90vw', sm: '350px' },
                         maxHeight: '90vh',
+
                         bgcolor: '#1b263b',
+                        color: '#fff',
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
+                        p: 2
+
                     },
                 }}
-                MenuListProps={{
-                    sx: {
-                        color: '#fff',         // Color del texto
-                    },
-                }}
-            >
-                <MenuItem onClick={handleClose}><strong>GitHub:</strong> <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer"> github.com/Maarttin</a></MenuItem>
-                <MenuItem onClick={handleClose}><strong>Correo  <br />  electrónico:</strong>  <br /> martinaragonsanchez@gmail.com</MenuItem>
-                <MenuItem onClick={handleClose}><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/mart%C3%ADn-arag%C3%B3n-s%C3%A1nchez-36942b283/" target="_blank" rel="noopener noreferrer" > linkedin.com/Martin</a> </MenuItem>
-                <MenuItem onClick={handleClose}><strong>Teléfono: </strong> 9513963434</MenuItem>
+                >
+            
+                    <MenuItem onClick={handleClose}>
+          <strong>GitHub:</strong>&nbsp;
+          <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer" style={{ color: '#64ffda' }}>
+            github.com/Maarttin
+          </a>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <strong>Correo:</strong>&nbsp;<br />
+          martinaragonsanchez@gmail.com
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <strong>LinkedIn:</strong>&nbsp;
+          <a href="https://www.linkedin.com/in/mart%C3%ADn-arag%C3%B3n-s%C3%A1nchez-36942b283/" target="_blank" rel="noopener noreferrer" style={{ color: '#64ffda' }}>
+            linkedin.com/Martin
+          </a>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <strong>Teléfono:</strong> 9513963434
+        </MenuItem>
             </Menu>
 
         </Box>
