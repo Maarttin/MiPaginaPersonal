@@ -5,12 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import ButtonBaseDemo from "../components/Boton";
+import { useTheme } from '@mui/material/styles';
+
 const cards = [
-  {
-    id: 1,
-    title: 'Certificaciones',
-    descriptionLong: 'Conceptos básicos de redes.\nConceptos básicos de Ciberseguridad.\nConocimiento en Python.\nConocimiento en Java.\nConocimiento en C.\nConocimiento en Javascript. ',
-  },
   {
     id: 2,
     title: 'Habilidades',
@@ -18,11 +15,18 @@ const cards = [
   },
   {
     id: 3,
-    title: 'Mis proyectos',
+    title: 'Proyectos',
     descriptionLong: 'Humans depend on plants and animals for survival.',
   },
-  
+  {
+    id: 4,
+    title: 'Pasatiempos',
+    descriptionLong: 'Me gusta jugar ajedrez.\n Me gusta el dibujo. \n Me gustan los videojuegos.'
+  }
+
 ];
+
+
 
 export default function SelectActionCard() {
 
@@ -31,6 +35,7 @@ export default function SelectActionCard() {
   const handleToggle = (id) => {
     setExpandedCardId(expandedCardId === id ? null : id);
   };
+  const theme = useTheme();
   return (
     <Box
       sx={{
@@ -43,44 +48,53 @@ export default function SelectActionCard() {
         // height: '100vh',
       }}
     >
-      <Box className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-[1000px]"
-
-      >
+      <Box className="w-full max-w-4xl" sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         {cards.map((card) => (
-          <Card key={card.id} 
-          sx={{
-            
-            width:'100%',
-            height: expandedCardId == card.id ? 300 : 60,
-            backgroundColor: expandedCardId=== card.id ? '#415a77' : '#778da9',
-            color: expandedCardId === card.id ? '#fff' : '#000',
-            transition: 'all 0.3s ease',
-            
-          }} >
+          <Card key={card.id}
+            sx={{
+
+              width: '100%',
+              height: expandedCardId == card.id ? 300 : 60,
+              backgroundColor: expandedCardId === card.id ? theme.palette.primary.main
+                : theme.palette.background.paper,
+              color: expandedCardId === card.id ? theme.palette.primary.contrastText
+                : theme.palette.text.primary,
+              transition: 'all 0.3s ease',
+
+            }} >
             <CardActionArea
               onClick={() => handleToggle(card.id)}
 
 
             >
-              <CardContent sx={{ height: '100%' , }}>
-                <Typography variant="h5" component="div" sx={{display: 'flex',  flexDirection: 'column',alignItems: 'center', }} >
+              <CardContent sx={{ height: '100%', }}>
+                <Typography variant="h5" component="div" sx={{
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: {
+                    xs: '1rem',     // teléfonos pequeños
+                    sm: '1.25rem',  // tablets o pantallas medianas
+                    md: '1.5rem',   // laptops
+                    lg: '1.75rem',  // pantallas grandes
+                  },
+                }} >
                   {card.title}
                 </Typography>
-                <Typography variant="body2" sx={{display: 'flex',  flexDirection: 'column',alignItems: 'center', }} >
-                 <p style={{ whiteSpace: 'pre-line' }}>
-                   {expandedCardId === card.id ? card.descriptionLong : card.descriptionShort}
+                <Typography variant="body2" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', }} >
+                  <p style={{ whiteSpace: 'pre-line' }}>
+                    {expandedCardId === card.id ? card.descriptionLong : card.descriptionShort}
                   </p>
                 </Typography>
               </CardContent>
             </CardActionArea>
-          
+
           </Card>
-          
+
         ))}
       </Box>
-      
+
     </Box>
   );
 }
+
+
 
 

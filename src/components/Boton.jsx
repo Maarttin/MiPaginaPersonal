@@ -88,7 +88,7 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
   right: 0,
   top: 0,
   bottom: 0,
-  backgroundColor: theme.palette.common.black,
+  backgroundColor:'var(--bg-color)',
   opacity: 0.4,
   transition: theme.transitions.create('opacity'),
 }));
@@ -96,7 +96,7 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
 const ImageMarked = styled('span')(({ theme }) => ({
   height: 3,
   width: 18,
-  backgroundColor: theme.palette.common.white,
+  backgroundColor: 'var(--bg-color)',
   position: 'absolute',
   bottom: -2,
   left: 'calc(50% - 9px)',
@@ -124,7 +124,7 @@ export default function ButtonBaseDemo() {
             width: {
               xs: '100%',  // Pantallas pequeñas
               sm: '50%',   // Tablets
-              md: '25%'    // Escritorio
+              md: '55%'    // Escritorio
             },
             height: {
               xs: 60,

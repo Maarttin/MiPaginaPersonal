@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+html {
+  font-size: 18px;
+  /* Esto cambia el valor de 1rem a 18px */
+}
+body.theme-light {
+  --bg-color: #f5f6fa;
+  --text-color: #000000;
+}
+
+body.theme-dark {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+}
+ 
+body.theme-light,
+body.theme-dark {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

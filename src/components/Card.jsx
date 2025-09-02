@@ -5,17 +5,20 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import foto_perfil from '../assets/foto_perfil.jpg'
+import { useTheme } from '@mui/material/styles';
+
 export default function ActionAreaCard() {
+    const theme = useTheme();
   return (
     <Card
       sx={{
         width: {
-          xs: '90%',
-          sm: 350,
-          md: 400,
+          xs: 250,
+          sm: 300,
+          md: 350,
         }
         , height: 'auto',
-        background: "#415a77",
+        backgroundColor: theme.palette.background.paper,
         margin: '0 auto',
       }}>
       <CardActionArea>
@@ -35,10 +38,22 @@ export default function ActionAreaCard() {
           }}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff' }}>
+          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#ffffff',fontSize: {
+              xs: '2rem',     // teléfonos pequeños
+              sm: '2.25rem',  // tablets o pantallas medianas
+              md: '2.4rem',   // laptops
+              lg: '2.75rem',  // pantallas grandes
+            } }}>
             Acerca de mi
           </Typography>
-          <Typography variant="body2" sx={{ color: '#ffffff', }}>
+          <Typography variant="body2" sx={{
+            color: theme.palette.text.primary, fontSize: {
+              xs: '1rem',     // teléfonos pequeños
+              sm: '1.25rem',  // tablets o pantallas medianas
+              md: '1.4rem',   // laptops
+              lg: '1.75rem',  // pantallas grandes
+            }
+          }}>
             Soy Martín Aragón Sánchez, Me gradué en la carrera de Ingeniería en Computación en la Universidad Tecnológica de la Mixteca de Huajuapan de León, Oaxaca en julio de 2025. La tecnología, los videojuegos y las computadoras son cosas que realmente me apasionan y me interesan mucho. En este momento estoy interesado en Desarrollo Web y en la Inteligencia Artificial.
           </Typography>
         </CardContent>
