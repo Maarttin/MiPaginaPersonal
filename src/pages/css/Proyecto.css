@@ -11,7 +11,7 @@
     height: auto;
     margin-top: 10px;
 }
-h2,p{
+h2, .enlace{
     font-weight: bold;
     text-align: center;
 }
