@@ -58,7 +58,12 @@ const certificateData =   {
       <List>
         {certificateData.certificates.map((cert, index) => (
           <ListItem key={index} disablePadding>
-            <Link href={cert.url} target="_blank" rel="noopener" underline="hover" sx={{ color: 'var(--text-color)' }}>
+            <Link href={cert.url} target="_blank" rel="noopener" underline="hover" sx={{ color: 'var(--text-color)', fontSize: {
+              xs: '1rem',     // teléfonos pequeños
+              sm: '1.25rem',  // tablets o pantallas medianas
+              md: '1.4rem',   // laptops
+              lg: '1.75rem',  // pantallas grandes
+            }, textAlign: 'center' }}>
               • {cert.name}
             </Link>
           </ListItem>

@@ -15,7 +15,7 @@ export default function ActionAreaCard() {
         width: {
           xs: 250,
           sm: 300,
-          md: 350,
+          md: 800,
         }
         , height: 'auto',
         backgroundColor: theme.palette.background.paper,
@@ -31,10 +31,17 @@ export default function ActionAreaCard() {
               xs: 200,
               sm: 250
             },
-            width: '100%',
+            width:{
+              xs: 200,
+              sm: 250, 
+              md: 300,
+
+            },
             objectFit: 'cover',
             borderTopLeftRadius: 4,
             borderTopRightRadius: 4,
+            display: 'block',
+            margin: '20px auto',
           }}
         />
         <CardContent>
@@ -43,8 +50,8 @@ export default function ActionAreaCard() {
               sm: '2.25rem',  // tablets o pantallas medianas
               md: '2.4rem',   // laptops
               lg: '2.75rem',  // pantallas grandes
-            } }}>
-            Acerca de mi
+            }, textAlign: 'center', fontWeight: 'bold' }}>
+            Acerca de mí
           </Typography>
           <Typography variant="body2" sx={{
             color: theme.palette.text.primary, fontSize: {

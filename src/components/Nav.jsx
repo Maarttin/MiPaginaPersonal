@@ -16,28 +16,28 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-
+import { Link } from "react-router-dom";
 
 const ResponsiveMenuItem = ({ children, ...props }) => (
-  <MenuItem
-    {...props}
-    sx={{
-      fontSize: {
-        xs: '0.85rem',
-        sm: '0.95rem',
-        md: '1rem',
-      },
-      '& a': {
-        fontSize: {
-          xs: '0.8rem',
-          sm: '0.9rem',
-          md: '1rem',
-        },
-      },
-    }}
-  >
-    {children}
-  </MenuItem>
+    <MenuItem
+        {...props}
+        sx={{
+            fontSize: {
+                xs: '0.85rem',
+                sm: '0.95rem',
+                md: '1rem',
+            },
+            '& a': {
+                fontSize: {
+                    xs: '0.8rem',
+                    sm: '0.9rem',
+                    md: '1rem',
+                },
+            },
+        }}
+    >
+        {children}
+    </MenuItem>
 );
 
 export default function ButtonAppBar() {
@@ -78,6 +78,13 @@ export default function ButtonAppBar() {
                         </IconButton>
                     ) : (
                         <Box sx={{ display: 'flex', gap: 2 }}>
+                            <Link to="/" style={{ textDecoration: "none" }}>
+                                <Button variant="contained">
+                                    Inicio
+                                </Button>
+                            </Link>
+
+
                             <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-color)' }}>
                                 <GitHubIcon style={{ fontSize: 30 }} />
                             </a>
@@ -104,16 +111,23 @@ export default function ButtonAppBar() {
                         </Box>
                     )}
 
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                    <Typography variant="h6" component="div" sx={{
+                        flexGrow: 1, textAlign: 'center', fontSize: {
+                            xs: '0.9rem',     // teléfonos pequeños
+                            sm: '1.25rem',  // tablets o pantallas medianas
+                            md: '1.5rem',   // laptops
+                            lg: '1.75rem',  // pantallas grandes
+                        }
+                    }}>
                         Martín Aragón Sánchez
                     </Typography>
                     <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center', gap: 2 }}>
 
-                        
+
                         <Button variant="outlined" onClick={toggleTheme} sx={{ ml: 2, color: 'var(--text-color)', borderColor: 'var(--text-color)' }}>
-                          Tema
+                            Tema
                         </Button>
-                        <ImageAvatars />
+                      
                     </Box>
 
                 </Toolbar>
@@ -143,7 +157,7 @@ export default function ButtonAppBar() {
             >
 
                 <ResponsiveMenuItem onClick={handleClose}
-                  
+
                 >
                     <strong>GitHub:</strong>&nbsp;
                     <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-color)' }}>

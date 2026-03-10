@@ -1,0 +1,17 @@
+.Contenedor{
+    margin:65px auto 0 auto; 
+}
+.proyectos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.proyecto-imagen{
+    width: 40rem;
+    height: auto;
+    margin-top: 10px;
+}
+h2,p{
+    font-weight: bold;
+    text-align: center;
+}

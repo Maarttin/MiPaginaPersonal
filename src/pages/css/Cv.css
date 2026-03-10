@@ -1,0 +1,63 @@
+.contenedor {
+    position: relative;
+    width: 1200px;
+    margin:65px auto 0 auto; 
+}
+
+.columnas {
+    display: flex;
+    flex-direction: row;
+  
+}
+
+.container {
+    padding: 40px 10px;
+    margin-left: 40px;
+    width: 400px;
+    height: 1300px;
+    background-color: #386DAD;
+    position: relative;
+    z-index: 2;
+}
+
+.franja {
+    width: 1200px;
+    height: 100px;
+    background-color: #143F72;
+    position: relative;
+    top: -1300px;
+    z-index: 1;
+}
+
+.nombre {
+    font-size: 30px;
+    color: white;
+    position: relative;
+    margin-left: 500px;
+}
+
+.texto-der {
+    margin-left: 40px;
+    margin-top: 160px;
+}
+
+h2 {
+    font-weight: bold;
+}
+h1{
+    font-weight: bold;
+  
+    text-align: center;
+}
+hr{
+    height: 4px;
+}
+.foto {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
