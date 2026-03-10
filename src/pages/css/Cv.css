@@ -1,16 +1,18 @@
 .contenedor {
+    /*contenedor principal*/
     position: relative;
     width: 1200px;
-    margin:65px auto 0 auto; 
+    margin: 0 auto 0 auto;
 }
 
 .columnas {
+    /*separa la parte vertical azul del texto de la derecha*/
     display: flex;
     flex-direction: row;
-  
 }
 
 .container {
+    /*franja azul vertical¨*/
     padding: 40px 10px;
     margin-left: 40px;
     width: 400px;
@@ -21,37 +23,44 @@
 }
 
 .franja {
+    /*franja azul horizontal*/
     width: 1200px;
     height: 100px;
     background-color: #143F72;
     position: relative;
-    top: -1300px;
+    top:100px;
     z-index: 1;
 }
 
+.texto-der {
+    /*texto de la parte derecha*/
+    margin-left: 40px;
+    margin-top: 160px;
+}
+
+
 .nombre {
+    /*texto ern la franja horizontal*/
     font-size: 30px;
     color: white;
     position: relative;
     margin-left: 500px;
 }
 
-.texto-der {
-    margin-left: 40px;
-    margin-top: 160px;
-}
-
 h2 {
     font-weight: bold;
 }
-h1{
+
+h1 {
     font-weight: bold;
-  
+
     text-align: center;
 }
-hr{
+
+hr {
     height: 4px;
 }
+
 .foto {
     width: 200px;
     height: 200px;
@@ -61,3 +70,46 @@ hr{
     margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+    .contenedor {
+        position: relative;
+        width: 100%;
+        margin: 5px auto 0 auto;
+    }
+
+    .container {
+        width: 50%;
+        font-size: large;
+        margin-left: 0;
+        height: auto;
+    }
+
+    .franja {
+        width: 100%;
+        height: 55px;
+        background-color: #143F72;
+        position: relative;
+        top: 65px;
+        z-index: 1;
+    }
+
+    .texto-der {
+        width: 50%;
+        margin-left: 0;
+        margin-top: 70px;
+        padding: 2px;
+        font-size: small;
+    }
+
+    .nombre {
+        /*texto ern la franja horizontal*/
+        font-size: small;
+        color: white;
+        position: relative;
+        margin-left: 60%;
+    }
+
+    .contacto {
+        overflow-wrap: break-word;
+    }
+}

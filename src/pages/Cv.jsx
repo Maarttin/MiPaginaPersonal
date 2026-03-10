@@ -4,11 +4,14 @@ import foto from '../assets/cv/perfil_cv.png'
 function Cv() {
   return (
     <div className='contenedor'>
+      <div className='franja'>
+        <p className='nombre'>Martín Aragón Sánchez <br /> ING. EN COMPUTACIÓN </p>
+      </div>
       <div className='columnas'>
         <div className='container'>
           <img src={foto} alt="Foto de perfil" className='foto' />
           <h1>Contacto</h1>
-          <p>951 396 3434 <br /> martinaragonsanchez@gmail.com <br /> https://maartin.github.io/MiPaginaPersonal/</p>
+          <p className='contacto'>951 396 3434 <br /> martinaragonsanchez@gmail.com <br /> https://maartin.github.io/MiPaginaPersonal/</p>
           <hr />
           <br></br>
           <h1>Habilidades</h1>
@@ -31,7 +34,7 @@ function Cv() {
             <li>Introduction to Cybersecurity</li>
             <li>Maching Learning Introduction</li>
             <li>Jira Fundamentals Badge</li>
-            <li>Scrum Foundation ProfessionalCertificate - SFPC™</li>
+            <li>Scrum Foundation Professional Certificate - SFPC™</li>
           </ul>
           <hr />
           <br></br>
@@ -96,9 +99,7 @@ function Cv() {
         </div>
       </div>
 
-      <div className='franja'>
-        <p className='nombre'>Martín Aragón Sánchez <br /> ING. EN COMPUTACIÓN </p>
-      </div>
+      
 
     </div>
 

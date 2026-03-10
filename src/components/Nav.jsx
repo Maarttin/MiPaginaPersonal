@@ -127,7 +127,7 @@ export default function ButtonAppBar() {
                         <Button variant="outlined" onClick={toggleTheme} sx={{ ml: 2, color: 'var(--text-color)', borderColor: 'var(--text-color)' }}>
                             Tema
                         </Button>
-                      
+
                     </Box>
 
                 </Toolbar>
@@ -156,9 +156,18 @@ export default function ButtonAppBar() {
 
             >
 
-                <ResponsiveMenuItem onClick={handleClose}
+                <ResponsiveMenuItem onClick={handleClose}   >
+                    <Link to="/" style={{ textDecoration: "none" }} >
+                        <Button variant="contained">
+                            Inicio
+                        </Button>
+                    </Link>
+                </ResponsiveMenuItem>
 
-                >
+                <ResponsiveMenuItem onClick={handleClose}   >
+
+
+                    <br />
                     <strong>GitHub:</strong>&nbsp;
                     <a href="https://github.com/Maarttin" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-color)' }}>
                         github.com/Maarttin
