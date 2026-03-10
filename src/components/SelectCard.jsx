@@ -6,8 +6,7 @@ import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import ButtonBaseDemo from "../components/Boton";
 import { useTheme } from '@mui/material/styles';
-import pagpersonal from '../assets/ProyectosImagenes/pagpersonal.png'
-import biblio from '../assets/ProyectosImagenes/biblioteca.png'
+
 const cards = [
   {
     id: 2,
